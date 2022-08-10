@@ -1,12 +1,13 @@
 const http = require("http");
 const express = require("express");
-const { createUser, createPost } = require("./app");
+const { createUser, createPost, getList } = require("./app");
 
 const app = express();
 app.use(express.json());
 
 app.post("/signup", createUser);
 app.post("/post", createPost);
+app.get("/list", getList);
 
 const server = http.createServer(app);
 
