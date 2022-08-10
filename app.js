@@ -54,5 +54,40 @@ const createPost = (req, res) => {
   console.log("after:", posts);
   res.json({ message: "CONTENT_CREATE" });
 };
+const getList = (req, res) => {
+  res.json({
+    data: [
+      {
+        userID: 1,
+        userName: "user1",
+        postingId: 1,
+        postingTitle: "간단한 HTTP API 개발 시작!",
+        postingContent:
+          "Node.js에 내장되어 있는 http 모듈을 사용해서 HTTP server를 구현.",
+      },
+      {
+        userID: 2,
+        userName: "user2",
+        postingId: 2,
+        postingTitle: "HTTP의 특성",
+        postingContent: "Request/Response와 Stateless!!",
+      },
+      {
+        userID: 3,
+        userName: "user3",
+        postingId: 3,
+        postingTitle: "내용1",
+        postingContent: "content!1",
+      },
+      {
+        userID: 4,
+        userName: "user4",
+        postingId: 4,
+        postingTitle: "내용2",
+        postingContent: "content2!",
+      },
+    ],
+  });
+};
 
-module.exports = { createUser, createPost };
+module.exports = { createUser, createPost, getList };
